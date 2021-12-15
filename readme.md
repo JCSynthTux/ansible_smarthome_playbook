@@ -74,4 +74,11 @@ deconz.yml
     At this point you would be done if you want to migrate data follow
 4.         ansible-playbook setup.yml -t "openhab_config,deconz_config" -i "your_host" --ask-become
 
+### Migrate or update openhab configs
+1. Copy your openhab conf folder and addons.config to 
 
+        roles/openhab/files/openhab
+
+2.  Run this
+
+        ansible-playbook setup.yml -t "openhab_config,deconz_config" -i "your_host" --ask-become
