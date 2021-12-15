@@ -1,5 +1,4 @@
 inventory
-roles/deconz/files/deconz_config
 vars/deconz.yml
 vars/general.yml
 vars/openhab.yml
