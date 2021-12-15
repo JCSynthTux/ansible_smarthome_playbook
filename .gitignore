@@ -1,0 +1,6 @@
+inventory
+roles/deconz/files/deconz_config
+roles/openhab/files/openhab
+vars/deconz.yml
+vars/general.yml
+vars/openhab.yml

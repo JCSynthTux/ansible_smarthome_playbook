@@ -1,0 +1,9 @@
+- import_tasks: ./install.yml
+  tags:
+    - docker
+    - initial
+
+- import_tasks: ./user.yml
+  tags:
+    - docker
+    - initial

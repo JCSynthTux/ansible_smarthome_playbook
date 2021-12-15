@@ -1,0 +1,19 @@
+---
+- hosts: all
+  become: true
+
+  vars_files:
+    - ./vars/general.yml
+    - ./vars/openhab.yml
+    - ./vars/deconz.yml
+
+  roles:
+    - common
+    - docker
+    - nginx
+    - openhab 
+    - deconz
+
+  handlers:
+    - include: ./roles/openhab/handlers/main.yml
+    - include: ./roles/common/handlers/main.yml

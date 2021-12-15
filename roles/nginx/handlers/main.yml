@@ -1,0 +1,15 @@
+- name: Starting nginx container
+  docker_container:
+    name: nginx
+    state: started
+
+- name: Stopping nginx container
+  docker_container:
+    name: nginx
+    state: stopped
+
+- name: Restarting nginx container
+  docker_container:
+    name: nginx
+    state: started
+    restart: yes

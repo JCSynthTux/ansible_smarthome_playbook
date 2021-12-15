@@ -1,0 +1,17 @@
+- name: Stopping deconz container
+  docker_container:
+    name: deconz
+    state: stopped
+
+- name: Copying deconz configs
+  ansible.builtin.copy:
+    src: "{{ role_path }}/files/deconz_config/"
+    dest: /opt/deconz/
+    owner: deconz
+    group: deconz
+    mode: '0644'
+
+- name: Starting deconz container
+  docker_container:
+    name: deconz
+    state: started

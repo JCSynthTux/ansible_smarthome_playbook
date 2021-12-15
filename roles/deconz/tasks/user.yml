@@ -1,0 +1,25 @@
+- name: Ensuring group deconz group exists
+  group:
+    name: deconz
+    state: present
+    gid: 8001
+
+- name: Adding user deconz  
+  user:
+    name: deconz
+    uid: 8001
+    group: deconz
+    groups:
+      - dialout
+    shell: /sbin/nologin
+    create_home: no
+    append: yes
+    state: present
+  become: true
+
+- name: Adding administration user to deconz group
+  user:
+    name: "{{ user }}"
+    groups: 
+      - deconz
+    append: yes

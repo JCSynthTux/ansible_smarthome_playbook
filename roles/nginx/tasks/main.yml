@@ -1,0 +1,14 @@
+- import_tasks: ./network.yml
+  tags:
+    - initial
+    - nginx
+
+- import_tasks: ./volumes.yml
+  tags:
+    - initial
+    - nginx
+
+- import_tasks: ./nginx.yml
+  tags:
+    - initial
+    - nginx

@@ -1,0 +1,13 @@
+- import_tasks: ./keys.yml
+  tags:
+    - common
+    - add_ssh_key
+
+- import_tasks: ./ssh_config.yml
+  tags:
+    - common
+
+- import_tasks: ./packages.yml
+  tags:
+    - common
+    

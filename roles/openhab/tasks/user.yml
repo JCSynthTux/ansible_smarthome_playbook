@@ -1,0 +1,23 @@
+- name: Ensuring group "openhab" exists with correct gid
+  group:
+    name: openhab
+    state: present
+    gid: 9001
+
+- name: Adding user "openhab"  
+  user:
+    name: openhab
+    uid: 9001
+    group: openhab
+    shell: /sbin/nologin
+    create_home: no
+    append: yes
+    state: present
+  become: true
+
+- name: Adding administration user to openhab group
+  user:
+    name: "{{ user }}"
+    groups: 
+      - openhab
+    append: yes

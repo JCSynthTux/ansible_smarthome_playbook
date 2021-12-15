@@ -1,0 +1,15 @@
+- name: Starting OpenHAB container
+  docker_container:
+    name: openhab
+    state: started
+
+- name: Stopping OpenHAB container
+  docker_container:
+    name: openhab
+    state: stopped
+
+- name: Restarting OpenHAB container
+  docker_container:
+    name: openhab
+    state: started
+    restart: yes

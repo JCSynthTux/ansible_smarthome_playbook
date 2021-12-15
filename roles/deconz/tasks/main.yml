@@ -1,0 +1,18 @@
+- import_tasks: ./user.yml
+  tags:
+    - initial
+    - deconz
+
+- import_tasks: ./directories.yml
+  tags:
+    - initial
+    - deconz
+
+- import_tasks: ./deconz.yml
+  tags:
+    - initial
+    - deconz
+
+- import_tasks: ./config.yml
+  tags:
+    - deconz_config

@@ -1,0 +1,3 @@
+- import_tasks: ./dockerMaintenance.yml
+  tags:
+    - maintenance

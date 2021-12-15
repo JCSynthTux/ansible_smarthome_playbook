@@ -1,0 +1,29 @@
+- name: Creating nginx_cert volume
+  docker_volume:
+    name: nginx_cert
+    state: present
+
+- name: Creating nginx_conf.d volume
+  docker_volume:
+    name: nginx_conf.d
+    state: present
+
+- name: Creating nginx_cert volume
+  docker_volume:
+    name: nginx_cert
+    state: present
+
+- name: Creating nginx_vhost.d volume
+  docker_volume:
+    name: nginx_vhost.d
+    state: present
+
+- name: Creating nginx_htpasswd volume
+  docker_volume:
+    name: nginx_htpasswd
+    state: present
+
+- name: Creating nginx_html volume
+  docker_volume:
+    name: nginx_html
+    state: present

@@ -1,0 +1,7 @@
+- name: Creating deconz volume
+  file:
+    path: /opt/deconz
+    state: directory
+    owner: deconz
+    group: deconz
+    mode: '775'
