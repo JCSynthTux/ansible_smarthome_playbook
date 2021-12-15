@@ -60,4 +60,18 @@ deconz.yml
 - initial
   - Does all of the above, except for deconz_config and openhab_config
 
+## Usage
+### Fresh Install
+1. Add variables to vars/
+2. Install depedencies with 
+
+        ansible-galaxy install -r requirements.yml
+
+3. Run the Playbook with 
+
+        ansible-playbook setup.yml -t "initial" -i "your_host" -k --ask-become
+
+    At this point you would be done if you want to migrate data follow
+4.         ansible-playbook setup.yml -t "openhab_config,deconz_config" -i "your_host" --ask-become
+
 
