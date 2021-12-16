@@ -15,4 +15,3 @@
       "VIRTUAL_PORT": "80"
       "VIRTUAL_HOST": "{{ deconz_host }}"
     restart_policy: always
-  when: not result.exists
