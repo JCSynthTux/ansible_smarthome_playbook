@@ -4,7 +4,7 @@
     state: stopped
 
 - name: Copying deconz configs
-  ansible.builtin.copy:
+  copy:
     src: "{{ role_path }}/files/deconz_config/"
     dest: /opt/deconz/
     owner: deconz
