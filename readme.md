@@ -29,7 +29,7 @@ openhab.yml
 
 deconz.yml
 
-    deconz:
+    deconz_host:
     deconz_controller: /dev/ttyUSB0 #Or Whatever Your Path is
 
 ## Tags
