@@ -4,3 +4,4 @@
     groups: 
       - docker
     append: yes
+  notify: Restarting docker service
