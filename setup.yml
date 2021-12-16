@@ -17,3 +17,4 @@
   handlers:
     - include: ./roles/openhab/handlers/main.yml
     - include: ./roles/common/handlers/main.yml
+    - include: ./roles/docker/handlers/main.yml
