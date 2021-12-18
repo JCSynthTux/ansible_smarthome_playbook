@@ -9,6 +9,11 @@
     - initial
     - common
 
+- import_tasks: ./sudoers.yml
+  tags:
+    - initial
+    - common
+
 - import_tasks: ./packages.yml
   tags:
     - initial
