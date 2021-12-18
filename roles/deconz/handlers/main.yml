@@ -1,0 +1,5 @@
+- name: Restarting Deconz container
+  docker_container:
+    name: deconz
+    state: started
+    restart: yes
