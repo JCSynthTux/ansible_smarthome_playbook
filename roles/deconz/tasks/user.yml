@@ -4,7 +4,7 @@
     state: present
     gid: 8001
 
-- name: Adding user deconz  
+- name: Create user deconz  
   user:
     name: deconz
     uid: 8001
