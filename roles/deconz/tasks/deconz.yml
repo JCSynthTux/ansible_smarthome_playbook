@@ -8,7 +8,7 @@
       - /etc/timezone:/etc/timezone:ro
       - /opt/deconz:/opt/deCONZ
     devices:
-      - "{{ deconz_controller }}:/dev/ttyUSB0:rwm"  
+      - "{{ deconz_controller }}"  
     env:
       "DECONZ_UID": "8001"
       "DECONZ_GID": "8001"
