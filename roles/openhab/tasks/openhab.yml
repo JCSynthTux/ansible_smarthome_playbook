@@ -9,6 +9,8 @@
       - /opt/openhab/conf:/openhab/conf
       - /opt/openhab/userdata:/openhab/userdata 
       - /opt/openhab/addons:/openhab/addons
+    ports:
+      - "8080:8080"
     env:
       "UID": "9001"
       "GID": "9001"
