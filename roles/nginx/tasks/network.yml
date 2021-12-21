@@ -1,4 +1,0 @@
-- name: Creating nginx network
-  docker_network:
-    name: nginx_network
-    state: present
