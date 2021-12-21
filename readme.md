@@ -2,7 +2,8 @@
 
 ## About
 
-This playbook deploys OpenHAB, Deconz and NGINX in Docker containers and does some default configs on host.
+This playbook deploys OpenHAB, Deconz and NGINX in Docker containers and does some default configs on host. 
+Tested and used for production in Ubuntu 20.04.
 
 ## Features
 
