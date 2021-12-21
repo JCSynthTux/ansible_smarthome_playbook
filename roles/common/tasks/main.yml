@@ -1,21 +1,17 @@
 - import_tasks: ./keys.yml
   tags:
-    - initial
     - common
     - add_ssh_key
 
 - import_tasks: ./ssh_config.yml
   tags:
-    - initial
     - common
 
 - import_tasks: ./sudoers.yml
   tags:
-    - initial
     - common
 
 - import_tasks: ./packages.yml
   tags:
-    - initial
     - common
     

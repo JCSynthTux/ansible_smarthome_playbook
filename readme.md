@@ -58,8 +58,6 @@ deconz.yml
   - Pushes openhabs config and addon.cfg file to host
 - deconz_config (Usually only for migration)
   - Pushes deconz configs to host
-- initial
-  - Does all of the above, except for deconz_config and openhab_config
 
 ## Usage
 ### Fresh Install
@@ -70,7 +68,7 @@ deconz.yml
 
 3. Run the Playbook with 
 
-        ansible-playbook setup.yml -t "initial" -i "your_host" -k --ask-become
+        ansible-playbook setup.yml --skip-tags "openhab_config,deconz_config" -i "your_host" -k --ask-become
 
     At this point you would be done if you want to migrate data follow
 4.         ansible-playbook setup.yml -t "openhab_config,deconz_config" -i "your_host" --ask-become
