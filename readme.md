@@ -61,17 +61,18 @@ deconz.yml
 
 ## Usage
 ### Fresh Install
-1. Add variables to vars/
-2. Install depedencies with 
+1. Copy default.config.yml
+2. Rename copy to config.yml
+3. Edit config.yml with your settings
+4. Install depedencies with 
 
         ansible-galaxy install -r requirements.yml
 
-3. Run the Playbook with 
+5. Run the Playbook with 
 
         ansible-playbook setup.yml --skip-tags "openhab_config,deconz_config" -i "your_host" -k --ask-become
 
-    At this point you would be done if you want to migrate data follow
-4.         ansible-playbook setup.yml -t "openhab_config,deconz_config" -i "your_host" --ask-become
+At this point you would be done if you want to migrate data follow
 
 ### Migrate or update openhab configs
 1. Copy your openhab conf folder and addons.config to 
