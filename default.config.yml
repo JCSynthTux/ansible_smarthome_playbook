@@ -1,0 +1,5 @@
+openhab_host:
+deconz_host:
+deconz_controller:
+user: 
+ssh_key:
