@@ -1,0 +1,10 @@
+---
+collections:
+  - name: community.general
+  - name: community.docker
+  - name: ansible.posix
+
+roles:
+  - src: https://github.com/JCSynthTux/ansible-role-docker-nginx
+    name: nginx
+    
