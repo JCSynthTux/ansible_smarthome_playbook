@@ -1,0 +1,7 @@
+- name: Copy mosquitto config
+  copy:
+    src: "{{ role_path }}/files/mosquitto.conf"
+    dest: /opt/mqtt/config
+    owner: mosquitto
+    group: mosquitto
+    mode: '0775'

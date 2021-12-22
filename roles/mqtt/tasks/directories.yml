@@ -1,0 +1,23 @@
+- name: Create mosquitto confing volume
+  file:
+    path: /opt/mqtt/config
+    state: directory
+    owner: mosquitto
+    group: mosquitto
+    mode: '0775'
+
+- name: Creating mosquitto data volume
+  file:
+    path: /opt/mqtt/data
+    state: directory
+    owner: mosquitto
+    group: mosquitto
+    mode: '0775'
+
+- name: Creating mosquitto log volume
+  file:
+    path: /opt/mqtt/log
+    state: directory
+    owner: mosquitto
+    group: mosquitto
+    mode: '0775'

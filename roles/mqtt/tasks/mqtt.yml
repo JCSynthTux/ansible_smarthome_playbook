@@ -1,0 +1,15 @@
+- name: Create mqtt container
+  docker_container:
+    name: mqtt
+    image: eclipse-mosquitto
+    network_mode: nginx_network
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+      - /opt/mqtt/config:/mosquitto/config
+      - /opt/mqtt/data:/mosquitto/data
+      - /opt/mqtt/log:/mosquitto/log
+    ports:
+      - "1883:1883"
+      - "9001:9001"
+    restart_policy: always  

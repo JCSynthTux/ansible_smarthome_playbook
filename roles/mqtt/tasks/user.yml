@@ -1,0 +1,16 @@
+- name: Check if mosquitto group exists
+  group:
+    name: mosquitto
+    state: present
+    gid: 1883
+
+- name: Check if mosquitto user exists
+  user:
+    name: mosquitto
+    uid: 1883
+    group: mosquitto
+    shell: /sbin/nologin
+    create_home: no
+    append: yes
+    state: present
+  become: true
