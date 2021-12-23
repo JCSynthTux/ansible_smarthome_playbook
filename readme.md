@@ -17,21 +17,7 @@ Tested and used for production in Ubuntu 20.04.
 - Config pushing for deConz
 
 ## Variables
-Place your variable files in vars/
-
-general.yml
-
-    user: 
-    ssh_key: 
-
-openhab.yml
-
-    openhab_host:
-
-deconz.yml
-
-    deconz_host:
-    deconz_controller: /dev/ttyUSB0 #Or Whatever Your Path is
+For variables copy and paste the default.config.yml, rename it to config.yml and edit the variables to your liking. 
 
 ## Tags
 - common
@@ -82,3 +68,12 @@ At this point you would be done if you want to migrate data follow
 2.  Run this
 
         ansible-playbook setup.yml -t "openhab_config,deconz_config" -i "your_host" --ask-become
+
+### Migrate deconz configs
+1. Copy your deconz config (config.ini, session.default, zcldb.txt, zll.db) to
+
+        roles/deconz/files/deconz_config
+
+2.  Run this
+
+        ansible-playbook setup.yml -t "deconz_config" -i "your_host" --ask-become
