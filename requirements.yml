@@ -7,4 +7,5 @@ collections:
 roles:
   - src: https://github.com/JCSynthTux/ansible-role-docker-nginx
     name: nginx
-    
+  - src: https://github.com/geerlingguy/ansible-role-docker
+    name: geerlingguy.docker
