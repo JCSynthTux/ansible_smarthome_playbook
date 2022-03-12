@@ -2,11 +2,18 @@
 - hosts: all
   become: true
 
+  vars:
+    pip_install_packages:
+      - name: docker
+  
   roles:
-    - common
-    - geerlingguy.docker
-    - nginx
-    - openhab 
-    - deconz
-    - mqtt
-
+    - role: common
+      when: common_setup is defined and common_setup == true
+    - role: geerlingguy.docker
+    - role: nginx
+    - role: openhab 
+      when: openhab_install is defined and openhab_install == true
+    - role: deconz
+      when: deconz_install is defined and deconz_install == true
+    - role: mqtt
+      when: mqtt_install is defined and mqtt_install == true
