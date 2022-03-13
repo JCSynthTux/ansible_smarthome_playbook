@@ -1,0 +1,6 @@
+# These are only vars for my roles
+# To see the docker vars check geerlings repo out https://github.com/geerlingguy/ansible-role-docker#role-variables
+common_setup: true
+openhab_install: true
+deconz_install: true
+mqtt_install: true
