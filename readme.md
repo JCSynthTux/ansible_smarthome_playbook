@@ -47,33 +47,11 @@ For variables copy and paste the default.config.yml, rename it to config.yml and
 
 ## Usage
 ### Fresh Install
-1. Copy default.config.yml
-2. Rename copy to config.yml
-3. Edit config.yml with your settings
-4. Install depedencies with 
-
-        ansible-galaxy install -r requirements.yml
-
-5. Run the Playbook with 
-
-        ansible-playbook setup.yml --skip-tags "openhab_config,deconz_config" -i "your_host" -k --ask-become
-
-At this point you would be done if you want to migrate data follow
-
-### Migrate or update openhab configs
-1. Copy your openhab conf folder and addons.config to 
-
-        roles/openhab/files/openhab
-
-2.  Run this
-
-        ansible-playbook setup.yml -t "openhab_config,deconz_config" -i "your_host" --ask-become
-
-### Migrate deconz configs
-1. Copy your deconz config (config.ini, session.default, zcldb.txt, zll.db) to
-
-        roles/deconz/files/deconz_config
-
-2.  Run this
-
-        ansible-playbook setup.yml -t "deconz_config" -i "your_host" --ask-become
+1. Clone this repo
+2. Create a directory in ```inventory/host_vars``` named after your host e.g. smarthome.local
+3. Copy the file ```examples/example_vars.yml``` to the before created folder
+4. Rename the copied and pasted file from ```example_vars.yml``` to ```vars.yml```
+5. Edit the ```vars.yml``` file to your liking - see variables
+6. Edit the ```inventory/hosts.yml``` file and make sure line 5 matches the name of the directory you created before and replace the IP with the one of your smarthome host
+7. In the root of this project run ```ansible-galaxy install -r requirements.yml```
+8. Run the playbook with ```ansible-playbook setup.yml -i inventory/hosts.yml -k --ask-become``` in the projects root directory
