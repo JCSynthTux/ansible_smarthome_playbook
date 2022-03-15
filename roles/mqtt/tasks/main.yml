@@ -1,17 +1,9 @@
 - import_tasks: ./user.yml
-  tags:
-    - mqtt
 
 - import_tasks: ./directories.yml
-  tags:
-    - mqtt
 
 - import_tasks: ./mqtt_config.yml
-  tags:
-    - mqtt
+
     - mqtt_config
 
 - import_tasks: ./mqtt.yml
-  tags:
-    - mqtt
-

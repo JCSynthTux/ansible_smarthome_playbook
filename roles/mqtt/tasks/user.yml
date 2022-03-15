@@ -3,6 +3,7 @@
     name: mosquitto
     state: present
     gid: 1883
+  when: mqtt_install is defined and mqtt_install == true
 
 - name: Check if mosquitto user exists
   user:
@@ -14,3 +15,4 @@
     append: yes
     state: present
   become: true
+  when: mqtt_install is defined and mqtt_install == true

@@ -13,3 +13,4 @@
       - "1883:1883"
       - "9001:9001"
     restart_policy: always  
+    state: "{{ 'started' if mqtt_install is true else 'absent' }}"
