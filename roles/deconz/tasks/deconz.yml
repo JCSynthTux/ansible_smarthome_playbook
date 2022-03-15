@@ -21,3 +21,4 @@
       timeout: 10s
       retries: 3
       start_period: 30s
+    state: "{{ 'started' if deconz_install is true else 'absent' }}"

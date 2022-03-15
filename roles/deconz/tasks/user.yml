@@ -1,8 +1,9 @@
-- name: Ensuring group deconz group exists
+- name: Ensure group deconz group exists
   group:
     name: deconz
     state: present
     gid: 8001
+  when: deconz_install is defined and deconz_install == true
 
 - name: Create user deconz  
   user:
@@ -16,10 +17,13 @@
     append: yes
     state: present
   become: true
+  when: deconz_install is defined and deconz_install == true
 
-- name: Adding administration user to deconz group
+- name: Add users to deconz group
   user:
-    name: "{{ user }}"
+    name: "{{ item }}"
     groups: 
       - deconz
     append: yes
+  with_items: "{{ smarthome_users }}"
+  when: deconz_install is defined and deconz_install == true

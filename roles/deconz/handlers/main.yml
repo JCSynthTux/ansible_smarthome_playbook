@@ -1,4 +1,4 @@
-- name: Restarting Deconz container
+- name: Restart Deconz container
   docker_container:
     name: deconz
     state: started

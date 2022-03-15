@@ -1,7 +1,8 @@
-- name: Creating deconz volume
+- name: Create deconz volume
   file:
     path: /opt/deconz
     state: directory
     owner: deconz
     group: deconz
-    mode: '775'
+    mode: '0775'
+  when: deconz_install is defined and deconz_install == true
