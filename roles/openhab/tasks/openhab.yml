@@ -1,4 +1,4 @@
-- name: Create a openhab container
+- name: Spawn openhab container
   docker_container:
     name: openhab
     image: openhab/openhab:latest
@@ -17,7 +17,7 @@
       "OPENHAB_HTTP_PORT": "8080"
       "VIRTUAL_PORT": "8080"
       "VIRTUAL_HOST": "{{ openhab_host }}"
-      "EXTRA_JAVA_OPTS": "-Duser.timezone=Europe/Berlin"
+      "EXTRA_JAVA_OPTS": "-Duser.timezone={{ timezone }}"
     restart_policy: always  
     healthcheck:
       test: ["CMD", "curl", "--fail", "http://{{ openhab_host }}"]
@@ -25,3 +25,4 @@
       timeout: 10s
       retries: 3
       start_period: 30s
+    state: "{{ 'started' if openhab_install is true else 'absent' }}"

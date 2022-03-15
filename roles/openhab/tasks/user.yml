@@ -1,4 +1,4 @@
-- name: Ensuring group "openhab" exists with correct gid
+- name: Ensure group "openhab" exists with correct gid
   group:
     name: openhab
     state: present
@@ -15,9 +15,10 @@
     state: present
   become: true
 
-- name: Adding administration user to openhab group
+- name: Add users to openhab group
   user:
-    name: "{{ user }}"
+    name: "{{ item }}"
     groups: 
       - openhab
     append: yes
+  with_items: "{{ smarthome_users }}"

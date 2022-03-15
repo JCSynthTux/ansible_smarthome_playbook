@@ -1,23 +1,27 @@
-- name: Creating openhab conf volume
+- name: Create openhab conf volume
   file:
     path: /opt/openhab/conf
     state: directory
     owner: openhab
     group: openhab
     mode: '0775'
+  when: openhab_install is defined and openhab_install == true
 
-- name: Creating openhab userdata volume
+- name: Create openhab userdata volume
   file:
     path: /opt/openhab/userdata
     state: directory
     owner: openhab
     group: openhab
     mode: '0775'
+  when: openhab_install is defined and openhab_install == true
 
-- name: Creating openhab addons volume
+- name: Create openhab addons volume
   file:
     path: /opt/openhab/addons
     state: directory
     owner: openhab
     group: openhab
     mode: '0775'
+  when: openhab_install is defined and openhab_install == true
+

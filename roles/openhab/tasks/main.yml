@@ -1,14 +1,8 @@
 - import_tasks: ./user.yml
-  tags:
-    - openhab
 
 - import_tasks: ./directories.yml
-  tags:
-    - openhab
 
 - import_tasks: ./openhab.yml
-  tags:
-    - openhab
 
 - import_tasks: ./config.yml
   tags:

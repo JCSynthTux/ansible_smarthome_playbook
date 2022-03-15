@@ -1,17 +1,17 @@
-- name: Copying openhab conf
+- name: Copy openhab conf
   copy:
     src: "{{ role_path }}/files/openhab/conf/"
     dest: /opt/openhab/conf/
     owner: openhab
     group: openhab
     mode: '0775'
-  notify: Restarting OpenHAB container
+  notify: Restart OpenHAB container
 
-- name: Copying openhab addons.config
+- name: Copy openhab addons.config
   copy:
     src: "{{ role_path }}/files/openhab/addons.config"
     dest: /opt/openhab/userdata/config/org/openhab
     owner: openhab
     group: openhab
     mode: '0775'
-  notify: Restarting OpenHAB container
+  notify: Restart OpenHAB container
