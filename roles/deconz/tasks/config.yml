@@ -1,9 +1,9 @@
-- name: Stopping deconz container
+- name: Stop deconz container
   docker_container:
     name: deconz
     state: stopped
 
-- name: Copying deconz configs
+- name: Copy deconz configs
   copy:
     src: "{{ role_path }}/files/deconz_config/"
     dest: /opt/deconz/
@@ -11,7 +11,7 @@
     group: deconz
     mode: '0644'
 
-- name: Starting deconz container
+- name: Start deconz container
   docker_container:
     name: deconz
     state: started
