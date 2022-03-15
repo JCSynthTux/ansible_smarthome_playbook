@@ -3,6 +3,7 @@
     name: openhab
     state: present
     gid: 9001
+  when: openhab_install is defined and openhab_install == true
 
 - name: Create user "openhab"  
   user:
@@ -14,6 +15,7 @@
     append: yes
     state: present
   become: true
+  when: openhab_install is defined and openhab_install == true
 
 - name: Add users to openhab group
   user:
@@ -22,3 +24,4 @@
       - openhab
     append: yes
   with_items: "{{ smarthome_users }}"
+  when: openhab_install is defined and openhab_install == true
