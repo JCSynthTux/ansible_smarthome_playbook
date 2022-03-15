@@ -16,30 +16,42 @@ Tested and used for production in Ubuntu 20.04.
 - Config pushing for OpenHAB
 - Config pushing for deConz
 
-## Variables
-For variables copy and paste the default.config.yml, rename it to config.yml and edit the variables to your liking. 
+If you only need the SSH hardening part and basic package install check [Initial Setup role by me](https://github.com/JCSynthTux/ansible-role-debian-initial-setup).
 
+For the docker installation and setup check the [Docker role by Jeff Geerling](https://github.com/geerlingguy/ansible-role-docker)
+
+## Variables
+This section will only describe variables needed for roles included in this playbook.
+
+For variables of roles maintained outside of this please see the repo of said roles.
+- [Initial Setup role by me](https://github.com/JCSynthTux/ansible-role-debian-initial-setup)
+- [NGINX role by me](https://github.com/geerlingguy/ansible-role-docker) *Leave ```nginx_network``` on default*
+- [Docker role by Jeff Geerling](https://github.com/geerlingguy/ansible-role-docker)
+
+```
+openhab_install: true
+deconz_install: true
+mqtt_install: true
+```
+Set to ```true``` to install component. ```false``` or omitting will despawn the container, but data will still be there.
+
+```
+timezone: Europe/Berlin 
+openhab_host: openhab.smarthome.local
+smarthome_users:
+  - foo
+  - bar
+  - foobar
+```
+Set ```openhab_host``` to domain on which OpenHAB should be reachable. Add linux users to ```smarthome_users```, to add them to the ```openhab``` linux group. Those users will be able to edit openhab config later.
+
+```
+deconz_controller: /Path/To/Deconz/Controller
+deconz_host: deconz.smarthome.local
+```
+Set ```deconz_controller``` to the path where your controller is located. See the ```--device``` command line option [here](https://github.com/deconz-community/deconz-docker#command-line-options) for information about the location. Set ```deconz_host``` to domain on which the Deconz WebUI should be reachable.
+ 
 ## Tags
-- common
-    - Applies basic SSH Hardening
-    - Adds SSH key for user
-    - Installs basic Packages
-- docker
-  - Adds docker repo
-  - Installs docker via apt
-  - Adds user to docker group
-- nginx
-  - Creates docker network
-  - Creates docker volumes
-  - Deploys nginx container
-- deconz
-  - Creates user for deconz container
-  - Creates directory for deconz container
-  - Deploys deconz container
-- openhab
-  - Creates user for openhab container
-  - Creates directories for openhab container
-  - Deploys openhab container
 - openhab_config
   - Pushes openhabs config and addon.cfg file to host
 - deconz_config (Usually only for migration)
