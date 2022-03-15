@@ -1,7 +1,20 @@
 # These are only vars for roles included in this repo
 # To see the docker vars check geerlings repo out https://github.com/geerlingguy/ansible-role-docker#role-variables
 # To see reverse proxy vars check my repo out https://github.com/JCSynthTux/ansible-role-docker-nginx
-common_setup: true
-openhab_install: true
-deconz_install: true
-mqtt_install: true
+openhab_install: true # set to true to deploy openhab
+deconz_install: true # set to true to deploy deconz
+mqtt_install: true # set to true to deploy mqtt
+
+# Globals
+timezone: Europe/Berlin
+
+# OpenHAB 
+openhab_host: openhab.smarthome.local
+smarthome_users:
+  - foo
+  - bar
+  - foobar
+
+# Deconz
+deconz_controller: /Path/To/Deconz/Controller
+deconz_host: deconz.smarthome.local
