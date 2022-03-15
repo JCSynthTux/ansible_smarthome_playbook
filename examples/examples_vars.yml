@@ -1,5 +1,6 @@
-# These are only vars for my roles
+# These are only vars for roles included in this repo
 # To see the docker vars check geerlings repo out https://github.com/geerlingguy/ansible-role-docker#role-variables
+# To see reverse proxy vars check my repo out https://github.com/JCSynthTux/ansible-role-docker-nginx
 common_setup: true
 openhab_install: true
 deconz_install: true

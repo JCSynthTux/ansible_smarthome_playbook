@@ -5,6 +5,8 @@ collections:
   - name: ansible.posix
 
 roles:
+  - src: https://github.com/JCSynthTux/ansible-role-debian-initial-setup
+    name: Initial_setup
   - src: https://github.com/JCSynthTux/ansible-role-docker-nginx
     name: nginx
   - src: https://github.com/geerlingguy/ansible-role-docker

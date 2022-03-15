@@ -7,8 +7,7 @@
       - name: docker
   
   roles:
-    - role: common
-      when: common_setup is defined and common_setup == true
+    - role: Initial_setup
     - role: geerlingguy.docker
     - role: nginx
     - role: openhab 

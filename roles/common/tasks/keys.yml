@@ -1,5 +1,0 @@
-- name: Set authorized key for user
-  ansible.posix.authorized_key:
-    user: "{{ user }}"
-    state: present
-    key: "{{ ssh_key }}"
