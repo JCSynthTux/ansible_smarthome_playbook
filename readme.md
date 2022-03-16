@@ -66,4 +66,9 @@ Set ```deconz_controller``` to the path where your controller is located. See th
 5. Edit the ```vars.yml``` file to your liking - see variables
 6. Edit the ```inventory/hosts.yml``` file and make sure line 5 matches the name of the directory you created before and replace the IP with the one of your smarthome host
 7. In the root of this project run ```ansible-galaxy install -r requirements.yml```
-8. Run the playbook with ```ansible-playbook setup.yml -i inventory/hosts.yml -k --ask-become``` in the projects root directory
+8. Run the playbook with ```ansible-playbook setup.yml -i inventory/hosts.yml -k --ask-become --skip-tags "deconz_config,openhab_config,mqtt_config"``` in the projects root directory
+
+### Optional Migration
+You can also migrate configs from OpenHAB, Deconz and MQTT with this playbook. After running the ```Fresh Install``` section you would do the following:
+1. Place your configs ~This Is Not Fully Done Yet~
+2. ansible-playbook setup.yml -i inventory/hosts.yml --tags "deconz_config,openhab_config,mqtt_config"
