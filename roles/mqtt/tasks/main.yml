@@ -3,7 +3,7 @@
 - import_tasks: ./directories.yml
 
 - import_tasks: ./mqtt_config.yml
-
+  tags:
     - mqtt_config
 
 - import_tasks: ./mqtt.yml
