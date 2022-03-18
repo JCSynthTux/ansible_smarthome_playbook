@@ -2,16 +2,19 @@
   docker_container:
     name: deconz
     state: stopped
+  when: deconz_config is defined
 
 - name: Copy deconz configs
   copy:
-    src: "{{ role_path }}/files/deconz_config/"
+    src: "{{ deconz_config }}"
     dest: /opt/deconz/
     owner: deconz
     group: deconz
     mode: '0644'
+  when: deconz_config is defined
 
 - name: Start deconz container
   docker_container:
     name: deconz
     state: started
+  when: deconz_config is defined
