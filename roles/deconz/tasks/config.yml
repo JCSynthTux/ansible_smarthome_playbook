@@ -2,7 +2,7 @@
   docker_container:
     name: deconz
     state: stopped
-  when: deconz_config is defined
+  when: deconz_config is defined and deconz_install is defined and deconz_install == true
 
 - name: Copy deconz configs
   copy:
@@ -11,10 +11,10 @@
     owner: deconz
     group: deconz
     mode: '0644'
-  when: deconz_config is defined
+  when: deconz_config is defined and deconz_install is defined and deconz_install == true
 
 - name: Start deconz container
   docker_container:
     name: deconz
     state: started
-  when: deconz_config is defined
+  when: deconz_config is defined and deconz_install is defined and deconz_install == true

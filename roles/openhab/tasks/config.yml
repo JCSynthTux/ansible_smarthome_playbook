@@ -6,7 +6,7 @@
     group: openhab
     mode: '0775'
   notify: Restart OpenHAB container
-  when: openhab_config is defined
+  when: openhab_config is defined and openhab_install is defined and openhab_install == true
 
 - name: Copy openhab addons.config
   copy:
@@ -16,4 +16,4 @@
     group: openhab
     mode: '0775'
   notify: Restart OpenHAB container
-  when: openhab_addons_config is defined
+  when: openhab_addons_config is defined and openhab_install is defined and openhab_install == true
