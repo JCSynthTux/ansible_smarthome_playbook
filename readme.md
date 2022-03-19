@@ -52,7 +52,7 @@ deconz_host: deconz.smarthome.local
 Set ```deconz_controller``` to the path where your controller is located. See the ```--device``` command line option [here](https://github.com/deconz-community/deconz-docker#command-line-options) for information about the location. Set ```deconz_host``` to domain on which the Deconz WebUI should be reachable.
 
 ### Variables for migration
-These vars are only needed for migrating your data from an old install to one managed by this playbook. Therefore **you should remove those vars from your ```vars.yml``` after migrating**.
+These vars are only needed for migrating your data from an old install to one managed by this playbook. Therefore **you should not add those vars to your ```vars.yml```**.
 ```
 openhab_config: /path/to/openhab_config
 ```
@@ -84,6 +84,10 @@ deconz_config: /path/to/deconz_config
 8. Run the playbook with ```ansible-playbook setup.yml -i inventory/hosts.yml -k --ask-become``` in the projects root directory
 
 ### Optional Migration
-You can also migrate configs from OpenHAB, Deconz and MQTT with this playbook. After running the ```Fresh Install``` section you would do the following:
-1. Set the vars metioned in the **Variables for migration** section
-2. ansible-playbook setup.yml -i inventory/hosts.yml --tags "deconz_config,openhab_config"
+#### OpenHAB
+For Migrating OpenHAB Config run ```ansible-playbook setup.yml -i inventory/hosts.yml --tags "openhab_config" --extra-vars='openhab_config=/path/to/config/dir,openhab_addons_config=/path/to/addons.cfg```
+
+You can either omit ```openhab_config``` or ```openhab_addons_config``` and only the one left will be migrated.
+
+#### Deconz
+For Migrating Deconz Config run ```ansible-playbook setup.yml -i inventory/hosts.yml --tags "deconz_config" --extra-vars='deconz_config=/path/to/deconz_config```
