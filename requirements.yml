@@ -12,3 +12,5 @@ roles:
     name: geerlingguy.docker
   - src: https://github.com/geerlingguy/ansible-role-pip
     name: geerlingguy.pip
+  - src: https://github.com/geerlingguy/ansible-role-docker_arm
+    name: geerlingguy.docker_arm

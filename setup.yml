@@ -9,6 +9,9 @@
   roles:
     - role: Initial_setup
     - role: geerlingguy.docker
+      when: ansible_architecture == "x86_64"
+    - role: geerlingguy.docker_arm
+      when: ansible_architecture == "arm64"
     - role: geerlingguy.pip
     - role: nginx
     - role: openhab 
