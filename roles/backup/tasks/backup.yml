@@ -1,0 +1,15 @@
+- name: Create backup container
+  docker_container:
+    name: smarthome_backup
+    image: jareware/docker-volume-backup
+    volumes:
+      - /opt/openhab:/backup/openhab:ro
+      - /opt/deconz:/backup/deconz:ro
+      - "{{ backup_location }}:/archive"
+    restart_policy: always  
+    env:
+      "BACKUP_CRON_EXPRESSION": "{{ backup_cron_expression | default('0 4 * * *') }}"
+      "BACKUP_FILENAME": "{{ backup_filename | default('smarthome-%Y-%m-%dT%H-%M-%S.tar.gz') }}"
+      "TZ": "{{ timezone | default('Europe/Berlin') }}"
+    state: "{{ 'started' if backup_container_install is true else 'absent' }}"
+
