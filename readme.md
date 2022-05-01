@@ -51,6 +51,15 @@ deconz_host: deconz.smarthome.local
 ```
 Set ```deconz_controller``` to the path where your controller is located. See the ```--device``` command line option [here](https://github.com/deconz-community/deconz-docker#command-line-options) for information about the location. Set ```deconz_host``` to domain on which the Deconz WebUI should be reachable.
 
+```
+backup_container_install: true
+backup_location: /path/to/store/backups
+backup_cron_expression: "0 3 * * *"
+backup_filename: "smarthome-backup-timestamp.tar.gz"
+```
+```backup_location``` is the only NOT optional variable here. For the ```backup_filename``` convention you might want to look at the docs of jareware/docker-volume-backup.
+Currently only the openhab and deconz volumes will be backed up.
+
 ### Variables for migration
 These vars are only needed for migrating your data from an old install to one managed by this playbook. Therefore **you should not add those vars to your ```vars.yml```**.
 ```
