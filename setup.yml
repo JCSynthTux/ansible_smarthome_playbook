@@ -5,15 +5,16 @@
   vars:
     pip_install_packages:
       - name: docker
-  
+
   roles:
     - role: Initial_setup
     - role: geerlingguy.docker
       when: ansible_architecture == "x86_64"
     - role: geerlingguy.docker_arm
-      when: ansible_architecture == "arm64"
+      when: ansible_architecture == "aarch64"
     - role: geerlingguy.pip
     - role: nginx
     - role: openhab 
     - role: deconz
     - role: mqtt
+    - role: backup
