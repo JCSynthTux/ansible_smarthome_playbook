@@ -5,6 +5,7 @@
     volumes:
       - /opt/openhab:/backup/openhab:ro
       - /opt/deconz:/backup/deconz:ro
+      - /var/run/docker.sock:/var/run/docker.sock:ro
       - "{{ backup_location }}:/archive"
     restart_policy: always  
     env:

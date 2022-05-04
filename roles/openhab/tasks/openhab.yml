@@ -18,7 +18,9 @@
       "VIRTUAL_PORT": "8080"
       "VIRTUAL_HOST": "{{ openhab_host }}"
       "EXTRA_JAVA_OPTS": "-Duser.timezone={{ timezone }}"
-    restart_policy: always  
+    restart_policy: always
+    labels:
+      - "docker-volume-backup.stop-during-backup": "true"
     healthcheck:
       test: ["CMD", "curl", "--fail", "http://{{ openhab_host }}"]
       interval: 1m30s
