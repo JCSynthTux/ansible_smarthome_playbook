@@ -16,7 +16,7 @@
       "VIRTUAL_HOST": "{{ deconz_host }}"
     restart_policy: always
     labels:
-      - "docker-volume-backup.stop-during-backup": "true"
+      "docker-volume-backup.stop-during-backup": "true"
     healthcheck:
       test: ["CMD", "curl", "--fail", "http://{{ deconz_host }}"]
       interval: 1m30s
