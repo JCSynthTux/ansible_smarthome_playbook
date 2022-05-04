@@ -13,4 +13,5 @@
       "BACKUP_FILENAME": "{{ backup_filename | default('smarthome-%Y-%m-%dT%H-%M-%S.tar.gz') }}"
       "TZ": "{{ timezone | default('Europe/Berlin') }}"
     state: "{{ 'started' if backup_container_install is true else 'absent' }}"
+    when: ansible_architecture is x86_64
 
