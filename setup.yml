@@ -7,7 +7,9 @@
       - name: docker
 
   roles:
-    - role: Initial_setup
+    - role: singleplatform-eng.users
+    - role: grog.package
+    - role: geerlingguy.security
     - role: geerlingguy.docker
       when: ansible_architecture == "x86_64"
     - role: geerlingguy.docker_arm
