@@ -18,5 +18,3 @@
     - role: nginx
     - role: openhab 
     - role: deconz
-    - role: mqtt
-    - role: backup
