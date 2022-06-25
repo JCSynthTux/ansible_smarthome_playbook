@@ -1,13 +1,35 @@
-# These are only vars for roles included in this repo
-# See the Varibales section of the readme.md in this repo
+users:
+  - username: fbar #fbar user group will be created
+    name: Foo Bar
+    password: "" #Generate hash with mkpasswd --method=sha-512 mypassword
+    groups: ['sudo', 'foo', 'bar']
+    ssh_key:
+      - "foo_bar_key"
 
-openhab_install: true # set to true to deploy openhab
-deconz_install: true # set to true to deploy deconz
-mqtt_install: true # set to true to deploy mqtt
+package_list:
+  - name: curl
+  - name: git
+  - name: neofetch
+  - name: htop
+  - name: wget
+  - name: tar
+  - name: zip
+  - name: gzip
 
-# Globals
+security_sudoers_passwordless:
+  - foo
+  - bar
+
+security_autoupdate_reboot: true #Will reboot at 0300
+security_fail2ban_enabled: false 
+
+# Geerlingguy Docker 
+docker_users:
+  - foo
+  - bar
 
 # OpenHAB
+openhab_install: true # set to true to deploy openhab
 timezone: Europe/Berlin 
 openhab_host: openhab.smarthome.local
 smarthome_users:
@@ -16,5 +38,6 @@ smarthome_users:
   - foobar
 
 # Deconz
+deconz_install: true # set to true to deploy deconz
 deconz_controller: /Path/To/Deconz/Controller
 deconz_host: deconz.smarthome.local
